@@ -4,10 +4,6 @@ import java.net.URI;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
-import org.miage.intervenantservice.control.IntervenantAssembler;
-import org.miage.intervenantservice.entity.Intervenant;
-import org.miage.intervenantservice.entity.IntervenantInput;
-import org.miage.intervenantservice.entity.IntervenantValidator;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -27,7 +23,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 @Controller
 @ResponseBody
-@RequestMapping(value = "/intervenants", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/helloworld", produces = MediaType.APPLICATION_JSON_VALUE)
 public class HWRepresentation {
 
 
@@ -37,7 +33,20 @@ public class HWRepresentation {
     // GET all
     @GetMapping
     public ResponseEntity<?> getAllIntervenants() {
-        return ResponseEntity.ok("Hello World I'm Lucas");
+        return ResponseEntity.ok(
+                "<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "    <title>Hello World</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "\n" +
+                "    <p>Hello world, I'm Lucas BERTRAND-CHRISTEN</p>\n" +
+                "\n" +
+                "</body>\n" +
+                "</html>\n");
     }
 
 }
